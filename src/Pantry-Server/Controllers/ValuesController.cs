@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 
-namespace PantryServer.Controllers
+namespace Pantry_Server.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
