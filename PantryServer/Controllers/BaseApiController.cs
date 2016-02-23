@@ -3,6 +3,7 @@ using System.Web.Http;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using PantryServer.Infrastructure;
+using PantryServer.Models;
 
 namespace PantryServer.Controller
 {
