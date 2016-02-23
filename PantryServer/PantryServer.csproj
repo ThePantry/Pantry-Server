@@ -280,6 +280,7 @@
     <Compile Include="Services\EmailService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Validators\MyCostomValidator.cs" />
+    <Compile Include="Validators\MyCustomPasswordValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602170716161_initialCreate.resx">
