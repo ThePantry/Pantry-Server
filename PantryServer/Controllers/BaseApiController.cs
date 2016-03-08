@@ -5,7 +5,7 @@ using Microsoft.AspNet.Identity.Owin;
 using PantryServer.Infrastructure;
 using PantryServer.Models;
 
-namespace PantryServer.Controller
+namespace PantryServer.Controllers
 {
     public class BaseApiController : ApiController
     {

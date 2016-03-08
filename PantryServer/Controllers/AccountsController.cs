@@ -8,16 +8,21 @@ using Microsoft.AspNet.Identity;
 using PantryServer.Infrastructure;
 using PantryServer.Models;
 
-namespace PantryServer.Controller
+namespace PantryServer.Controllers
 {
+    [Authorize]
+    //Todo check whether this should be in a config file
+    [RoutePrefix("api/Accounts")]
     public class AccountsController : BaseApiController
     {
+      
         [System.Web.Mvc.Route("users")]
         public IHttpActionResult GetUsers()
         {
             return Ok(this.AppUserManager.Users.ToList().Select(u => this.TheModelFactory.Create(u)));
         }
 
+        
         [System.Web.Mvc.Route("user/{id:guid}", Name = "GetUserById")]
         public async Task<IHttpActionResult> GetUser(string Id)
         {
@@ -32,6 +37,7 @@ namespace PantryServer.Controller
 
         }
 
+        
         [System.Web.Mvc.Route("user/{username}")]
         public async Task<IHttpActionResult> GetUserByName(string username)
         {
@@ -47,6 +53,7 @@ namespace PantryServer.Controller
         }
 
         //This is exposed to the internet, Json gets passed in and is auto serialised within this method so we can interact with it
+        [AllowAnonymous]
         [Route("create")]
         public async Task<IHttpActionResult> CreateUser(AccountBindingModels.CreateUserBindingModel createUserModel)
         {
@@ -84,6 +91,7 @@ namespace PantryServer.Controller
         }
 
         //TODO CONFIRM PASSWORD BEFORE CONFIRMING EMAIL
+        [AllowAnonymous]
         [HttpGet]
         [Route("ConfirmEmail", Name = "ConfirmEmailRoute")]
         public async Task<IHttpActionResult> ConfirmEmail(string userId = "", string code = "")
@@ -106,6 +114,7 @@ namespace PantryServer.Controller
             }
         }
 
+        
         [Route("ChangePassword")]
         public async Task<IHttpActionResult> ChangePassword(AccountBindingModels.ChangePasswordBindingModel model)
         {
@@ -127,6 +136,7 @@ namespace PantryServer.Controller
             return Ok();
         }
 
+        
         [Route("user/{id:guid}")]
         public async Task<IHttpActionResult> DeleteUser(string id)
         {
