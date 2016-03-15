@@ -12,16 +12,22 @@ namespace PantryServer.Controllers
         private ModelFactory _modelFactory;
         private ApplicationUserManager _AppUserManager = null;
 
+        private ApplicationRoleManager _AppRoleManager = null;
+
+        protected ApplicationRoleManager AppRoleManager
+        {
+            get
+            {
+                return _AppRoleManager ?? Request.GetOwinContext().GetUserManager<ApplicationRoleManager>();
+            }
+        }
+
         protected ApplicationUserManager AppUserManager
         {
             get
             {
                 return _AppUserManager ?? Request.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
-        }
-
-        public BaseApiController()
-        {
         }
 
         protected ModelFactory TheModelFactory
