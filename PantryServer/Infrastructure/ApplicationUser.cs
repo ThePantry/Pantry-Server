@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using PantryServer.Models;
 
 namespace PantryServer.Infrastructure
 {
@@ -25,6 +26,8 @@ namespace PantryServer.Infrastructure
 
         [Required]
         public DateTime JoinDate { get; set; }
+
+        public List<Shop> Shops { get; set; } 
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)
         {

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using Microsoft.AspNet.Identity.EntityFramework;
+using PantryServer.Models;
 
 namespace PantryServer.Infrastructure
 {
@@ -20,5 +22,6 @@ namespace PantryServer.Infrastructure
             return new ApplicationDbContext();
         }
 
+        public DbSet<Shop> Shops { get; set; }
     }
 }

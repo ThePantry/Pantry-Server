@@ -7,18 +7,18 @@ namespace PantryServer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Roles : IMigrationMetadata
+    public sealed partial class Add_Shop_Model : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Roles));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Add_Shop_Model));
         
         string IMigrationMetadata.Id
         {
-            get { return "201603150804200_Roles"; }
+            get { return "201603220727056_Add_Shop_Model"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return null; }
+            get { return Resources.GetString("Source"); }
         }
         
         string IMigrationMetadata.Target

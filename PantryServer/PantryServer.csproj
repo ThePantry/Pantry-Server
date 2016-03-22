@@ -336,7 +336,10 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\ClaimsController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\ShopsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -344,20 +347,17 @@
     <Compile Include="Infrastructure\ApplicationRoleManager.cs" />
     <Compile Include="Infrastructure\ApplicationUser.cs" />
     <Compile Include="Infrastructure\ApplicationUserManager.cs" />
+    <Compile Include="Infrastructure\ClaimsAuthorizationAttribute.cs" />
+    <Compile Include="Infrastructure\ExtendedClaimsProvider.cs" />
+    <Compile Include="Infrastructure\RolesFromClaims.cs" />
+    <Compile Include="Models\Shop.cs" />
     <Compile Include="Migrations\201602170716161_initialCreate.cs" />
     <Compile Include="Migrations\201602170716161_initialCreate.Designer.cs">
       <DependentUpon>201602170716161_initialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201603080821284_authorisationJWT.cs" />
-    <Compile Include="Migrations\201603080821284_authorisationJWT.Designer.cs">
-      <DependentUpon>201603080821284_authorisationJWT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201603150804200_Roles.cs" />
-    <Compile Include="Migrations\201603150804200_Roles.Designer.cs">
-      <DependentUpon>201603150804200_Roles.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\ClaimBindingModel.cs" />
     <Compile Include="Models\ModelFactory.cs" />
     <Compile Include="Models\RoleBindingModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -371,12 +371,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602170716161_initialCreate.resx">
       <DependentUpon>201602170716161_initialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201603080821284_authorisationJWT.resx">
-      <DependentUpon>201603080821284_authorisationJWT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201603150804200_Roles.resx">
-      <DependentUpon>201603150804200_Roles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
