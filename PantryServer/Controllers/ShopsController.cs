@@ -14,11 +14,12 @@ using PantryServer.Models;
 
 namespace PantryServer.Controllers
 {
-    public class ShopsController : ApiController
+    [RoutePrefix("api/shops")]
+    public class ShopsController : BaseApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/Shops
+        [Route("")]
         public IQueryable<Shop> GetShops()
         {
             return db.Shops;

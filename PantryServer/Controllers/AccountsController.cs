@@ -10,6 +10,9 @@ using PantryServer.Models;
 
 namespace PantryServer.Controllers
 {
+    /// <summary>
+    /// Accounts Controller for managing accounts on pantry
+    /// </summary>
     [Authorize]
     //Todo check whether this should be in a config file
     [RoutePrefix("api/Accounts")]
