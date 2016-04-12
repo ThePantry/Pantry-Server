@@ -342,6 +342,7 @@
     <Compile Include="Providers\CustomJwtFormat.cs" />
     <Compile Include="Providers\CustomOAuthProvider.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\IUnitOfWork.cs" />
     <Compile Include="Repositories\ShopUnitOfWork.cs" />
     <Compile Include="Services\EmailService.cs" />
     <Compile Include="Startup.cs" />

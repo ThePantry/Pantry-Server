@@ -13,6 +13,7 @@ using System.Web.Http.Results;
 using Microsoft.AspNet.Identity;
 using PantryServer.Infrastructure;
 using PantryServer.Models;
+using PantryServer.Repositories;
 
 namespace PantryServer.Controllers
 {
@@ -20,12 +21,20 @@ namespace PantryServer.Controllers
     [RoutePrefix("api/shops")]
     public class ShopsController : BaseApiController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        public IUnitOfWork uow { get; set; }
+        public ShopsController()
+        {
+        }
+
+        public ShopsController(IUnitOfWork uow)
+        {
+            this.uow = uow;
+        }
 
         [Route("")]
         public IQueryable<Shop> GetShops()
         {
-            return db.Shops;
+            return uow.;
         }
 
         // GET: api/Shops/5

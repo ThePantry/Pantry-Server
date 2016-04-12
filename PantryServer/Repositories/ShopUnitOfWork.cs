@@ -7,7 +7,7 @@ using PantryServer.Models;
 
 namespace PantryServer.Repositories
 {
-    public class ShopUnitOfWork : IDisposable
+    public class ShopUnitOfWork : IUnitOfWork, IDisposable
     {
         private ApplicationDbContext context = new ApplicationDbContext();
         private GenericRepository<Shop> _shopRepository;
