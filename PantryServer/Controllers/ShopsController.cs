@@ -23,13 +23,13 @@ namespace PantryServer.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         [Route("")]
-        public IQueryable<Models.Shop> GetShops()
+        public IQueryable<Shop> GetShops()
         {
             return db.Shops;
         }
 
         // GET: api/Shops/5
-        [ResponseType(typeof(Models.Shop))]
+        [ResponseType(typeof(Shop))]
         public async Task<IHttpActionResult> GetShop(int id)
         {
             Shop shop = await db.Shops.FindAsync(id);
@@ -77,7 +77,7 @@ namespace PantryServer.Controllers
         }
 
         // POST: api/Shops
-        [ResponseType(typeof(Models.Shop))]
+        [ResponseType(typeof(Shop))]
         public async Task<IHttpActionResult> PostShop(Shop shop)
         {
             shop.User = await AppUserManager.Users.SingleAsync(s=>s.Id == User.Identity.GetUserId());
@@ -93,7 +93,7 @@ namespace PantryServer.Controllers
         }
 
         // DELETE: api/Shops/5
-        [ResponseType(typeof(Models.Shop))]
+        [ResponseType(typeof(Shop))]
         public async Task<IHttpActionResult> DeleteShop(int id)
         {
             Shop shop = await db.Shops.FindAsync(id);
