@@ -22,6 +22,6 @@ namespace PantryServer.Infrastructure
             return new ApplicationDbContext();
         }
 
-        public DbSet<Shop> Shops { get; set; }
+        public DbSet<Models.Shop> Shops { get; set; }
     }
 }

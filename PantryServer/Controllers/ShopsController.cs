@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using Microsoft.AspNet.Identity;
 using PantryServer.Infrastructure;
 using PantryServer.Models;
 
@@ -20,16 +21,16 @@ namespace PantryServer.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         [Route("")]
-        public IQueryable<Shop> GetShops()
+        public IQueryable<Models.Shop> GetShops()
         {
             return db.Shops;
         }
 
         // GET: api/Shops/5
-        [ResponseType(typeof(Shop))]
+        [ResponseType(typeof(Models.Shop))]
         public async Task<IHttpActionResult> GetShop(int id)
         {
-            Shop shop = await db.Shops.FindAsync(id);
+            Models.Shop shop = await db.Shops.FindAsync(id);
             if (shop == null)
             {
                 return NotFound();
@@ -40,7 +41,7 @@ namespace PantryServer.Controllers
 
         // PUT: api/Shops/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutShop(int id, Shop shop)
+        public async Task<IHttpActionResult> PutShop(int id, Models.Shop shop)
         {
             if (!ModelState.IsValid)
             {
@@ -74,8 +75,8 @@ namespace PantryServer.Controllers
         }
 
         // POST: api/Shops
-        [ResponseType(typeof(Shop))]
-        public async Task<IHttpActionResult> PostShop(Shop shop)
+        [ResponseType(typeof(Models.Shop))]
+        public async Task<IHttpActionResult> PostShop(Models.Shop shop)
         {
             if (!ModelState.IsValid)
             {
@@ -89,13 +90,18 @@ namespace PantryServer.Controllers
         }
 
         // DELETE: api/Shops/5
-        [ResponseType(typeof(Shop))]
+        [ResponseType(typeof(Models.Shop))]
         public async Task<IHttpActionResult> DeleteShop(int id)
         {
             Shop shop = await db.Shops.FindAsync(id);
             if (shop == null)
             {
                 return NotFound();
+            }
+
+            if (shop.User.Id.Equals(User.Identity.GetUserId()))
+            {
+                return BadRequest();
             }
 
             db.Shops.Remove(shop);

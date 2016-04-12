@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using PantryServer.Infrastructure;
 
 namespace PantryServer.Models
 {
     public class Shop
     {
+        public ApplicationUser User { get; set; }
         public int Id { get; set; }
         public string Name { get; set; }
         //public List<Product> Product { get; set; }
