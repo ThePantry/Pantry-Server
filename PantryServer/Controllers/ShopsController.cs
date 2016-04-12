@@ -80,6 +80,7 @@ namespace PantryServer.Controllers
         [ResponseType(typeof(Models.Shop))]
         public async Task<IHttpActionResult> PostShop(Shop shop)
         {
+            shop.User = await AppUserManager.Users.SingleAsync(s=>s.Id == User.Identity.GetUserId());
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
