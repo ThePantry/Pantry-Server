@@ -97,7 +97,7 @@ namespace PantryServer.Controllers
             Shop shop = await db.Shops.FindAsync(id);
             if (shop == null) return NotFound();
 
-            if (CheckUserIsAuthorised(shop)) return BadRequest("unauthorised access to shop");
+            if (!CheckUserIsAuthorised(shop)) return BadRequest("Unauthorised access to shop");
 
             db.Shops.Remove(shop);
             await db.SaveChangesAsync();
