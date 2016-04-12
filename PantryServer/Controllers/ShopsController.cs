@@ -101,7 +101,7 @@ namespace PantryServer.Controllers
 
             if (shop.User.Id.Equals(User.Identity.GetUserId()))
             {
-                return BadRequest();
+                return BadRequest("unauthorised access to shop");
             }
 
             db.Shops.Remove(shop);
