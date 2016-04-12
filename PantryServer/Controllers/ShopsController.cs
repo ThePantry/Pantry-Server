@@ -32,16 +32,16 @@ namespace PantryServer.Controllers
         }
 
         [Route("")]
-        public IQueryable<Shop> GetShops()
+        public IEnumerable<Shop> GetShops()
         {
-            return uow.;
+            return uow.shopRepository.Get();
         }
 
         // GET: api/Shops/5
         [ResponseType(typeof(Shop))]
         public async Task<IHttpActionResult> GetShop(int id)
         {
-            Shop shop = await db.Shops.FindAsync(id);
+            Shop shop = uow.shopRepository.GetById(id);
             if (shop == null)
             {
                 return NotFound();
@@ -66,15 +66,18 @@ namespace PantryServer.Controllers
 
             if (!CheckUserIsAuthorised(shop)) return BadRequest("Unauthorised access to shop");
 
-            db.Entry(shop).State = EntityState.Modified;
+            uow.shopRepository.Update(shop);
+
+            //TODO maybe add entity sate to the uow
+            //db.Entry(shop).State = EntityState.Modified;
 
             try
             {
-                await db.SaveChangesAsync();
+                uow.Save();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ShopExists(id))
+                if (uow.shopRepository.GetById(id) != null)
                 {
                     return NotFound();
                 }
@@ -95,8 +98,8 @@ namespace PantryServer.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Shops.Add(shop);
-            await db.SaveChangesAsync();
+            uow.shopRepository.Add(shop);
+            uow.Save();
 
             return CreatedAtRoute("DefaultApi", new { id = shop.Id }, shop);
         }
@@ -105,29 +108,15 @@ namespace PantryServer.Controllers
         [ResponseType(typeof(Shop))]
         public async Task<IHttpActionResult> DeleteShop(int id)
         {
-            Shop shop = await db.Shops.FindAsync(id);
+            Shop shop = uow.shopRepository.GetById(id);
             if (shop == null) return NotFound();
 
             if (!CheckUserIsAuthorised(shop)) return BadRequest("Unauthorised access to shop");
 
-            db.Shops.Remove(shop);
-            await db.SaveChangesAsync();
+            uow.shopRepository.Delete(shop);
+            uow.Save();
 
             return Ok(shop);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool ShopExists(int id)
-        {
-            return db.Shops.Count(e => e.Id == id) > 0;
         }
 
         private bool CheckUserIsAuthorised(Shop shop)
