@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PantryServer", "PantryServer\PantryServer.csproj", "{C503D39A-C2B0-4516-B5D0-BEF1210DE0D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PantryServerUnitTests", "PantryServerTests\PantryServerUnitTests.csproj", "{CA6049AC-8AED-4F61-BB6F-989C700596C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PantryServerUnitTests", "PantryServerUnitTests\PantryServerUnitTests.csproj", "{3A210DFB-53BF-4454-AC14-DA35614F8D7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{C503D39A-C2B0-4516-B5D0-BEF1210DE0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C503D39A-C2B0-4516-B5D0-BEF1210DE0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C503D39A-C2B0-4516-B5D0-BEF1210DE0D0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA6049AC-8AED-4F61-BB6F-989C700596C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA6049AC-8AED-4F61-BB6F-989C700596C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA6049AC-8AED-4F61-BB6F-989C700596C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA6049AC-8AED-4F61-BB6F-989C700596C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A210DFB-53BF-4454-AC14-DA35614F8D7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A210DFB-53BF-4454-AC14-DA35614F8D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A210DFB-53BF-4454-AC14-DA35614F8D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A210DFB-53BF-4454-AC14-DA35614F8D7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
