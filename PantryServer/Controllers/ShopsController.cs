@@ -16,6 +16,7 @@ using PantryServer.Models;
 
 namespace PantryServer.Controllers
 {
+    [Authorize]
     [RoutePrefix("api/shops")]
     public class ShopsController : BaseApiController
     {
@@ -31,7 +32,7 @@ namespace PantryServer.Controllers
         [ResponseType(typeof(Models.Shop))]
         public async Task<IHttpActionResult> GetShop(int id)
         {
-            Models.Shop shop = await db.Shops.FindAsync(id);
+            Shop shop = await db.Shops.FindAsync(id);
             if (shop == null)
             {
                 return NotFound();
@@ -42,7 +43,7 @@ namespace PantryServer.Controllers
 
         // PUT: api/Shops/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutShop(int id, Models.Shop shop)
+        public async Task<IHttpActionResult> PutShop(int id, Shop shop)
         {
             if (!ModelState.IsValid)
             {
@@ -53,6 +54,8 @@ namespace PantryServer.Controllers
             {
                 return BadRequest();
             }
+
+            if (!CheckUserIsAuthorised(shop)) return BadRequest("Unauthorised access to shop");
 
             db.Entry(shop).State = EntityState.Modified;
 
@@ -66,10 +69,8 @@ namespace PantryServer.Controllers
                 {
                     return NotFound();
                 }
-                else
-                {
-                    throw;
-                }
+                throw;
+
             }
 
             return StatusCode(HttpStatusCode.NoContent);
@@ -77,12 +78,14 @@ namespace PantryServer.Controllers
 
         // POST: api/Shops
         [ResponseType(typeof(Models.Shop))]
-        public async Task<IHttpActionResult> PostShop(Models.Shop shop)
+        public async Task<IHttpActionResult> PostShop(Shop shop)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+
+            if (!CheckUserIsAuthorised(shop)) return BadRequest("Unauthorised access to shop");
 
             db.Shops.Add(shop);
             await db.SaveChangesAsync();
