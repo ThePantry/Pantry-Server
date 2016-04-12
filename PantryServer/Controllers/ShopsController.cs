@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Http.Results;
 using Microsoft.AspNet.Identity;
 using PantryServer.Infrastructure;
 using PantryServer.Models;
@@ -94,15 +95,9 @@ namespace PantryServer.Controllers
         public async Task<IHttpActionResult> DeleteShop(int id)
         {
             Shop shop = await db.Shops.FindAsync(id);
-            if (shop == null)
-            {
-                return NotFound();
-            }
+            if (shop == null) return NotFound();
 
-            if (shop.User.Id.Equals(User.Identity.GetUserId()))
-            {
-                return BadRequest("unauthorised access to shop");
-            }
+            if (CheckUserIsAuthorised(shop)) return BadRequest("unauthorised access to shop");
 
             db.Shops.Remove(shop);
             await db.SaveChangesAsync();
@@ -122,6 +117,15 @@ namespace PantryServer.Controllers
         private bool ShopExists(int id)
         {
             return db.Shops.Count(e => e.Id == id) > 0;
+        }
+
+        private bool CheckUserIsAuthorised(Shop shop)
+        {
+            if (shop.User.Id.Equals(User.Identity.GetUserId()))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
