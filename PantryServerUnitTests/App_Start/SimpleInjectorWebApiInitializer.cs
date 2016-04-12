@@ -1,3 +1,6 @@
+using PantryServer.Repositories;
+using PantryServerUnitTests.Repositories;
+
 [assembly: WebActivator.PostApplicationStartMethod(typeof(PantryServerUnitTests.App_Start.SimpleInjectorWebApiInitializer), "Initialize")]
 
 namespace PantryServerUnitTests.App_Start
@@ -26,10 +29,9 @@ namespace PantryServerUnitTests.App_Start
      
         private static void InitializeContainer(Container container)
         {
-#error Register your services here (remove this line).
-
             // For instance:
             // container.Register<IUserRepository, SqlUserRepository>(Lifestyle.Scoped);
+            container.Register<IUnitOfWork, FakeShopUnitOfWork>(Lifestyle.Scoped);
         }
     }
 }
