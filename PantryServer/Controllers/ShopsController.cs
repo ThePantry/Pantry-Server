@@ -85,8 +85,6 @@ namespace PantryServer.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (!CheckUserIsAuthorised(shop)) return BadRequest("Unauthorised access to shop");
-
             db.Shops.Add(shop);
             await db.SaveChangesAsync();
 
