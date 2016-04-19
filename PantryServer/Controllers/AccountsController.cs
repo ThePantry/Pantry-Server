@@ -85,7 +85,8 @@ namespace PantryServer.Controllers
 
             var callbackUrl = new Uri(Url.Link("ConfirmEmailRoute", new { userId = user.Id, code }));
 
-            await AppUserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+            //Todo get send grid working
+            //await AppUserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
             Uri locationHeader = new Uri(Url.Link("GetUserById", new { id = user.Id }));
 

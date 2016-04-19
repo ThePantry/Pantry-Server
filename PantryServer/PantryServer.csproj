@@ -320,6 +320,10 @@
     <Compile Include="Infrastructure\ClaimsAuthorizationAttribute.cs" />
     <Compile Include="Infrastructure\ExtendedClaimsProvider.cs" />
     <Compile Include="Infrastructure\RolesFromClaims.cs" />
+    <Compile Include="Migrations\201604191041303_remove-required.cs" />
+    <Compile Include="Migrations\201604191041303_remove-required.Designer.cs">
+      <DependentUpon>201604191041303_remove-required.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Interfaces\DomainInterfaces.cs" />
     <Compile Include="Migrations\201604050343193_shop.cs" />
     <Compile Include="Migrations\201604050343193_shop.Designer.cs">
@@ -354,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604050343193_shop.resx">
       <DependentUpon>201604050343193_shop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604191041303_remove-required.resx">
+      <DependentUpon>201604191041303_remove-required.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

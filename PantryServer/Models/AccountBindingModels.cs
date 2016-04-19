@@ -18,6 +18,7 @@ namespace PantryServer.Models
             [Display(Name = "Email")]
             public string Email { get; set; }
 
+            [Required]
             [Display(Name = "Username")]
             public string Username { get; set; }
 
