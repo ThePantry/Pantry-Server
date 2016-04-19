@@ -2,7 +2,7 @@
 
 namespace PantryServer.Repositories
 {
-    public interface IUnitOfWork
+    public interface IShopUnitOfWork
     {
         GenericRepository<Shop> shopRepository { get; }
         void Save();

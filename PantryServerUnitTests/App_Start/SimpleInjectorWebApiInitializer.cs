@@ -31,7 +31,7 @@ namespace PantryServerUnitTests.App_Start
         {
             // For instance:
             // container.Register<IUserRepository, SqlUserRepository>(Lifestyle.Scoped);
-            container.Register<IUnitOfWork, FakeShopUnitOfWork>(Lifestyle.Scoped);
+            container.Register<IShopUnitOfWork, MockShopUnitOfWork>(Lifestyle.Scoped);
         }
     }
 }

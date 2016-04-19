@@ -92,7 +92,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="Repositories\FakeShopUnitOfWork.cs" />
+    <Compile Include="Repositories\MockShopUnitOfWork.cs" />
     <Compile Include="App_Start\SimpleInjectorWebApiInitializer.cs" />
     <Compile Include="Controllers\ShopsControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

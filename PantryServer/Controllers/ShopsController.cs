@@ -21,12 +21,9 @@ namespace PantryServer.Controllers
     [RoutePrefix("api/shops")]
     public class ShopsController : BaseApiController
     {
-        public IUnitOfWork uow { get; set; }
-        public ShopsController()
-        {
-        }
+        public IShopUnitOfWork uow { get; set; }
 
-        public ShopsController(IUnitOfWork uow)
+        public ShopsController(IShopUnitOfWork uow)
         {
             this.uow = uow;
         }

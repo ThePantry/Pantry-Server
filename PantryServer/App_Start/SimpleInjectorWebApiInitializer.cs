@@ -30,7 +30,7 @@ namespace PantryServer.App_Start
         {
             // For instance:
             // container.Register<IUserRepository, SqlUserRepository>(Lifestyle.Scoped);
-            container.Register<IUnitOfWork, ShopUnitOfWork>(Lifestyle.Scoped);
+            container.Register<IShopUnitOfWork, ShopUnitOfWork>(Lifestyle.Scoped);
         }
     }
 }

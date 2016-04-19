@@ -15,6 +15,10 @@ namespace PantryServer.Repositories
         internal ApplicationDbContext context;
         internal DbSet<T> dbSet;
 
+        public GenericRepository()
+        {
+        }
+
         public GenericRepository(ApplicationDbContext context)
         {
             this.context = context;

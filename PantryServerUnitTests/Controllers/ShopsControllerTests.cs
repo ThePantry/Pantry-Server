@@ -1,8 +1,11 @@
 ﻿using System.ComponentModel;
+using System.Linq;
 using System.Runtime.InteropServices;
 using Moq;
 using NUnit.Framework;
 using PantryServer.Controllers;
+using PantryServer.Repositories;
+using PantryServerUnitTests.Repositories;
 
 namespace PantryServerUnitTests.Controllers
 {
@@ -14,19 +17,20 @@ namespace PantryServerUnitTests.Controllers
         [SetUp]
         public void Setup()
         {
-            Sut = new ShopsController(); 
+            Sut = new ShopsController(new Mock<MockShopUnitOfWork>().Object);
         }
 
         [TearDown]
         public void Teardown()
         {
-            
+            Sut = null;
         }
 
         [Test()]
         public void GetShopsTest()
         {
-            Assert.Fail();
+            var act = Sut.uow.shopRepository.Get();
+            Assert.That(act.First().Id.Equals(1));
         }
 
         [Test()]

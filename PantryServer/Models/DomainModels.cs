@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using PantryServer.Controllers;
 using PantryServer.Infrastructure;
-using PantryServer.Models.Interfaces;
 
 namespace PantryServer.Models
 {
-    public class Shop : IShop
+    public class Shop
     {
         public ApplicationUser User { get; set; }
         public int Id { get; set; }
