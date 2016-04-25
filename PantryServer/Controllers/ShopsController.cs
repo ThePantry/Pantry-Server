@@ -55,7 +55,7 @@ namespace PantryServer.Controllers
                 return BadRequest();
             }
 
-            if (!CheckUserIsAuthorised(shop)) return BadRequest("Unauthorised access to shop");
+            if (!CheckUserOwnsShop(shop)) return BadRequest("Unauthorised access to shop");
 
             db.Entry(shop).State = EntityState.Modified;
 
@@ -99,7 +99,7 @@ namespace PantryServer.Controllers
             Shop shop = await db.Shops.FindAsync(id);
             if (shop == null) return NotFound();
 
-            if (!CheckUserIsAuthorised(shop)) return BadRequest("Unauthorised access to shop");
+            if (!CheckUserOwnsShop(shop)) return BadRequest("Unauthorised access to shop");
 
             db.Shops.Remove(shop);
             await db.SaveChangesAsync();
@@ -121,7 +121,7 @@ namespace PantryServer.Controllers
             return db.Shops.Count(e => e.Id == id) > 0;
         }
 
-        private bool CheckUserIsAuthorised(Shop shop)
+        private bool CheckUserOwnsShop(Shop shop)
         {
             if (shop.User.Id.Equals(User.Identity.GetUserId()))
             {
