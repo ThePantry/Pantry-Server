@@ -18,13 +18,20 @@ namespace PantryServer.Models.Interfaces
     {
         int Id { get; set; }
         string Name { get; set; }
-        Category Category { get; set; }
+        string Description { get; set; }
+        List<Tag> Tags { get; set; }
     }
 
-    public interface ICategory
+    public interface IProductCollection
     {
         int Id { get; set; }
         string Name { get; set; }
         List<Product> Products { get; set; }
+    }
+
+    public interface ITag
+    {
+        int Id { get; set; }
+        string Name { get; set; }
     }
 }

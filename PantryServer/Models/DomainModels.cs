@@ -15,18 +15,24 @@ namespace PantryServer.Models
         public string Email { get; set; }
     }
 
+    public class Tag : ITag
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+
     public class Product : IProduct
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Category Category { get; set; }
+        public string Description { get; set; }
+        public List<Tag> Tags { get; set; } 
     }
 
-    public class Category : ICategory
+    public class ProductCollection : IProductCollection
     {
         public List<Product> Products { get; set; }
         public int Id { get; set; }
         public string Name { get; set; }
-
     }
 }
