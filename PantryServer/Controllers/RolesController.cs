@@ -8,6 +8,7 @@ using System.Web.Http;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using PantryServer.Models;
+using PantryServer.Models.Accounts;
 
 namespace PantryServer.Controllers
 {

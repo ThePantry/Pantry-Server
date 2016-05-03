@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Web;
 using System.Web.Http.Routing;
 using Microsoft.AspNet.Identity.EntityFramework;
 using PantryServer.Infrastructure;
 
-namespace PantryServer.Models
+namespace PantryServer.Models.Accounts
 {
     public class ModelFactory
     {

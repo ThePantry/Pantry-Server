@@ -6,6 +6,7 @@ using System.Web.Http;
 using Microsoft.AspNet.Identity;
 using PantryServer.Infrastructure;
 using PantryServer.Models;
+using PantryServer.Models.Accounts;
 
 namespace PantryServer.Controllers
 {

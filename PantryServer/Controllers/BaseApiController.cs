@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using PantryServer.Infrastructure;
 using PantryServer.Models;
+using PantryServer.Models.Accounts;
 
 namespace PantryServer.Controllers
 {
