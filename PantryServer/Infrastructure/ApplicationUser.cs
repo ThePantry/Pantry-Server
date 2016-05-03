@@ -25,7 +25,7 @@ namespace PantryServer.Infrastructure
         [Required]
         public DateTime JoinDate { get; set; }
 
-        public List<Models.Shop> Shops { get; set; } 
+        public List<Shop> Shops { get; set; } 
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)
         {
