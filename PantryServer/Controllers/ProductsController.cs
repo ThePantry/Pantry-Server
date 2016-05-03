@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PantryServer.Infrastructure;
+using PantryServer.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -7,12 +9,23 @@ using System.Web.Http;
 
 namespace PantryServer.Controllers
 {
-    public class ProductsController : ApiController
+    [Authorize]
+    [RoutePrefix("api/products")]
+    public class ProductsController : BaseApiController
     {
-        // GET: api/Products
-        public IEnumerable<string> Get()
+        private ApplicationDbContext db = new ApplicationDbContext();
+
+        [AllowAnonymous]
+        [Route("")]
+        public IQueryable<Product> GetProducts()
         {
-            return new string[] { "value1", "value2" };
+            return db.Products;
+        }
+
+        [Route("")]
+        public IQueryable<Product> GetProducts(int id)
+        {
+            return db.Shops.SelectMany(s => s.Products);
         }
 
         // GET: api/Products/5

@@ -22,6 +22,7 @@ namespace PantryServer.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        [AllowAnonymous]
         [Route("")]
         public IQueryable<Shop> GetShops()
         {
