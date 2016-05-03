@@ -323,6 +323,7 @@
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\ClaimsController.cs" />
+    <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\PostmanApiController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
@@ -341,6 +342,10 @@
     <Compile Include="Migrations\201604191041303_remove-required.cs" />
     <Compile Include="Migrations\201604191041303_remove-required.Designer.cs">
       <DependentUpon>201604191041303_remove-required.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030741178_product.cs" />
+    <Compile Include="Migrations\201605030741178_product.Designer.cs">
+      <DependentUpon>201605030741178_product.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Interfaces\ITag.cs" />
     <Compile Include="Migrations\201604050343193_shop.cs" />
@@ -385,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604191041303_remove-required.resx">
       <DependentUpon>201604191041303_remove-required.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030741178_product.resx">
+      <DependentUpon>201605030741178_product.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

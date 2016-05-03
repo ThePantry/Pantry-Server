@@ -7,18 +7,18 @@ namespace PantryServer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Add_Shop_Model : IMigrationMetadata
+    public sealed partial class product : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Add_Shop_Model));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(product));
         
         string IMigrationMetadata.Id
         {
-            get { return "201603220727056_Add_Shop_Model"; }
+            get { return "201605030741178_product"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target
