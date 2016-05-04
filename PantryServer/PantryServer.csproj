@@ -324,8 +324,8 @@
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\ClaimsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PostmanApiController.cs" />
-    <Compile Include="Controllers\Products1Controller.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\ShopsController.cs" />
@@ -347,6 +347,7 @@
     <Compile Include="Migrations\201605030741178_product.Designer.cs">
       <DependentUpon>201605030741178_product.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Interfaces\IPage.cs" />
     <Compile Include="Models\Interfaces\ITag.cs" />
     <Compile Include="Migrations\201604050343193_shop.cs" />
     <Compile Include="Migrations\201604050343193_shop.Designer.cs">
@@ -355,6 +356,8 @@
     <Compile Include="Models\Interfaces\IProduct.cs" />
     <Compile Include="Models\Interfaces\IProductCollection.cs" />
     <Compile Include="Models\Interfaces\IShop.cs" />
+    <Compile Include="Models\Pages\LandingPage.cs" />
+    <Compile Include="Models\Pages\StoryPage.cs" />
     <Compile Include="Models\Postman\PostmanCollectionGet.cs" />
     <Compile Include="Models\Postman\PostmanFolderGet.cs" />
     <Compile Include="Models\Postman\PostmanRequestGet.cs" />
@@ -376,6 +379,7 @@
     <Compile Include="Providers\CustomOAuthProvider.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\ShopUnitOfWork.cs" />
+    <Compile Include="Services\BlobService.cs" />
     <Compile Include="Services\EmailService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Validators\MyCostomValidator.cs" />
