@@ -11,70 +11,15 @@ namespace PantryServer.Models.Pages
     {
         private BlobService blob = new BlobService();
 
-        public int Id
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public int Id { get; set; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public string Title { get; set; }
 
-        public string Title
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public string Description { get; set; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public string HeroImage { get; set; }
 
-        public string Description
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public string HeroImage
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public List<string> ImagePaths
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public List<string> ImagePaths { get; set; }
 
         public string[] images
         {
