@@ -21,17 +21,6 @@ namespace PantryServer.Models.Pages
 
         public List<string> ImagePaths { get; set; }
 
-        public string[] images
-        {
-            get
-            {
-                return blob.GetMultipleBlobPaths(new[] { "hello", "hello" });
-            }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
     }
 }
