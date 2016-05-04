@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using Microsoft.AspNet.Identity.EntityFramework;
 using PantryServer.Models;
+using PantryServer.Models.Interfaces;
 
 namespace PantryServer.Infrastructure
 {
@@ -24,5 +25,6 @@ namespace PantryServer.Infrastructure
 
         public DbSet<Shop> Shops { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<IPage> Pages { get; set; }
     }
 }
