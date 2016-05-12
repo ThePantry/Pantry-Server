@@ -34,9 +34,9 @@ namespace PantryServer.Models.EmberViews
     public class ProductViewModel
     {
         public string Name { get; set; }
-
-        public int Price { get; set; }
+        public string SubTitle { get; set; }        
         public string Content { get; set; }
+        public int Price { get; set; }
         public List<string> ImagePaths { get; set; }
     }
 }
