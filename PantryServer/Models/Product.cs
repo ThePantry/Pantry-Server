@@ -10,6 +10,7 @@ namespace PantryServer.Models
         public int? Quantity { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public List<Tag> Tags { get; set; } 
+        public List<Tag> Tags { get; set; }
+        public List<string> ImagePaths { get; set; }
     }
 }

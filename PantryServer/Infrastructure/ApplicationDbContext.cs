@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using PantryServer.Models;
-using PantryServer.Models.Interfaces;
+using PantryServer.Models.Pages;
 
 namespace PantryServer.Infrastructure
 {
@@ -25,6 +21,7 @@ namespace PantryServer.Infrastructure
 
         public DbSet<Shop> Shops { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<IPage> Pages { get; set; }
+        public DbSet<AboutPage> AboutPages { get; set; }
+        public DbSet<ContactPage> ContactPages { get; set; }
     }
 }
