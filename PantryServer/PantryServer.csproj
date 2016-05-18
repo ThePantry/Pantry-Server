@@ -361,6 +361,7 @@
     <Compile Include="Models\Postman\PostmanCollectionGet.cs" />
     <Compile Include="Models\Postman\PostmanFolderGet.cs" />
     <Compile Include="Models\Postman\PostmanRequestGet.cs" />
+    <Compile Include="Models\SeedDB.cs" />
     <Compile Include="Models\Shop.cs" />
     <Compile Include="Migrations\201602170716161_initialCreate.cs" />
     <Compile Include="Migrations\201602170716161_initialCreate.Designer.cs">
