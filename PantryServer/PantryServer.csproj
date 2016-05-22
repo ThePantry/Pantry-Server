@@ -347,6 +347,7 @@
     <Compile Include="Migrations\201605030741178_product.Designer.cs">
       <DependentUpon>201605030741178_product.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\EmberViews\ShopViewModels.cs" />
     <Compile Include="Models\Interfaces\ITag.cs" />
     <Compile Include="Migrations\201604050343193_shop.cs" />
@@ -356,6 +357,8 @@
     <Compile Include="Models\Interfaces\IProduct.cs" />
     <Compile Include="Models\Interfaces\IProductCollection.cs" />
     <Compile Include="Models\Interfaces\IShop.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Pages\AboutPage.cs" />
     <Compile Include="Models\Pages\ContactPage.cs" />
     <Compile Include="Models\Postman\PostmanCollectionGet.cs" />
