@@ -15,6 +15,7 @@ namespace PantryServer.Models
         public string Description { get; set; }
         public string Email { get; set; }
         public AboutPage AboutPage { get; set; }
-        
+        public ContactPage ContactPage { get; set; }
+
     }
 }
