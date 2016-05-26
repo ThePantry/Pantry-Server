@@ -348,7 +348,9 @@
       <DependentUpon>201605030741178_product.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Cart.cs" />
-    <Compile Include="Models\EmberViews\ShopViewModels.cs" />
+    <Compile Include="Models\ViewModels\CartViewModels.cs" />
+    <Compile Include="Models\ViewModels\ProductViewModels.cs" />
+    <Compile Include="Models\ViewModels\ShopViewModels.cs" />
     <Compile Include="Models\Interfaces\ITag.cs" />
     <Compile Include="Migrations\201604050343193_shop.cs" />
     <Compile Include="Migrations\201604050343193_shop.Designer.cs">

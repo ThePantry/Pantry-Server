@@ -16,5 +16,7 @@ namespace PantryServer.Models
         public string DeliveryAddress { get; set; }
         public ApplicationUser User { get; set; }
         public Cart Cart { get; set; }
+        public string Instructions { get; set; }
+        public int NumberOfItems { get; set; }
     }
 }

@@ -13,6 +13,7 @@ namespace PantryServer.Infrastructure
 
         public DbSet<Shop> Shops { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductCollection> Collections { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<PantryOrder> PantryOrders { get; set; }
         public DbSet<ShopOrder> ShopOrders { get; set; }
