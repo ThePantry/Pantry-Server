@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PantryServer.Models.EmberViews
+namespace PantryServer.Models.ViewModels
 {
     public class AboutViewModel
     {
@@ -17,26 +17,15 @@ namespace PantryServer.Models.EmberViews
     public class ContactViewModel
     {
         public string Heading { get; set; }
+        //Content variables will contain an html string
         public string Content { get; set; }
         public List<string> VendorImagesPaths { get; set; }
     }
     
-    public class ProductCollectionViewModel
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Heading { get; set; }        
-        public string Content { get; set; }
-        public string ImagePath { get; set; }
-        public List<ProductViewModel> Products { get; set; }
-    }
-
-    public class ProductViewModel
+    public class ShopInformationViewModel
     {
         public string Name { get; set; }
-        public string SubTitle { get; set; }        
-        public string Content { get; set; }
-        public int Price { get; set; }
-        public List<string> ImagePaths { get; set; }
+        public string ShortDescription { get; set; }
+        public int ShopId { get; set; }
     }
 }
