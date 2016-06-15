@@ -6,7 +6,7 @@
     <ProjectGuid>{3A210DFB-53BF-4454-AC14-DA35614F8D7F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PantryServerUnitTests</RootNamespace>
+    <RootNamespace>PantryServerUnitTests.Test</RootNamespace>
     <AssemblyName>PantryServerUnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -69,7 +69,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Controllers\ShopsControllerTests.cs" />
+    <Compile Include="MathsHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
