@@ -318,6 +318,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\CartsController.cs" />
     <Compile Include="Controllers\ClaimsController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
@@ -335,23 +336,15 @@
     <Compile Include="Infrastructure\ClaimsAuthorizationAttribute.cs" />
     <Compile Include="Infrastructure\ExtendedClaimsProvider.cs" />
     <Compile Include="Infrastructure\RolesFromClaims.cs" />
-    <Compile Include="Migrations\201604191041303_remove-required.cs" />
-    <Compile Include="Migrations\201604191041303_remove-required.Designer.cs">
-      <DependentUpon>201604191041303_remove-required.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605030741178_product.cs" />
-    <Compile Include="Migrations\201605030741178_product.Designer.cs">
-      <DependentUpon>201605030741178_product.cs</DependentUpon>
+    <Compile Include="Migrations\201606220946066_init.cs" />
+    <Compile Include="Migrations\201606220946066_init.Designer.cs">
+      <DependentUpon>201606220946066_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\ViewModels\CartViewModels.cs" />
     <Compile Include="Models\ViewModels\ProductViewModels.cs" />
     <Compile Include="Models\ViewModels\ShopViewModels.cs" />
     <Compile Include="Models\Interfaces\ITag.cs" />
-    <Compile Include="Migrations\201604050343193_shop.cs" />
-    <Compile Include="Migrations\201604050343193_shop.Designer.cs">
-      <DependentUpon>201604050343193_shop.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\Interfaces\IProduct.cs" />
     <Compile Include="Models\Interfaces\IProductCollection.cs" />
     <Compile Include="Models\Interfaces\IShop.cs" />
@@ -361,12 +354,7 @@
     <Compile Include="Models\Postman\PostmanCollectionGet.cs" />
     <Compile Include="Models\Postman\PostmanFolderGet.cs" />
     <Compile Include="Models\Postman\PostmanRequestGet.cs" />
-    <Compile Include="Models\SeedDB.cs" />
     <Compile Include="Models\Shop.cs" />
-    <Compile Include="Migrations\201602170716161_initialCreate.cs" />
-    <Compile Include="Migrations\201602170716161_initialCreate.Designer.cs">
-      <DependentUpon>201602170716161_initialCreate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accounts\AccountBindingModels.cs" />
     <Compile Include="Models\Accounts\ClaimBindingModel.cs" />
@@ -388,21 +376,12 @@
     <Compile Include="Validators\MyCustomPasswordValidator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602170716161_initialCreate.resx">
-      <DependentUpon>201602170716161_initialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604050343193_shop.resx">
-      <DependentUpon>201604050343193_shop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604191041303_remove-required.resx">
-      <DependentUpon>201604191041303_remove-required.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605030741178_product.resx">
-      <DependentUpon>201605030741178_product.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <EmbeddedResource Include="Migrations\201606220946066_init.resx">
+      <DependentUpon>201606220946066_init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
