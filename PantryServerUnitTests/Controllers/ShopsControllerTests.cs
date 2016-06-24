@@ -9,48 +9,13 @@ namespace PantryServerUnitTests.Controllers
     [TestFixture()]
     public class ShopsControllerTests
     {
-        private ShopsController Sut { get; set; }
-
-        [SetUp]
-        public void Setup()
+        public void GetShops_NoShops_Null()
         {
-            Sut = new ShopsController(); 
-        }
+            //Given
 
-        [TearDown]
-        public void Teardown()
-        {
-            
-        }
+            //When
 
-        [Test()]
-        public void GetShopsTest()
-        {
-            Assert.Fail();
-        }
-
-        [Test()]
-        public void GetShopTest()
-        {
-            Assert.Fail();
-        }
-
-        [Test()]
-        public void PutShopTest()
-        {
-            Assert.Fail();
-        }
-
-        [Test()]
-        public void PostShopTest()
-        {
-            Assert.Fail();
-        }
-
-        [Test()]
-        public void DeleteShopTest()
-        {
-            Assert.Fail();
+            //Then
         }
     }
 }
