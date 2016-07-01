@@ -11,7 +11,7 @@ namespace PantryServer.Infrastructure
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
 
-        public DbSet<Shop> Shops { get; set; }
+        public virtual DbSet<Shop> Shops { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductCollection> Collections { get; set; }
         public DbSet<Cart> Carts { get; set; }
