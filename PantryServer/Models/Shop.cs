@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using PantryServer.Infrastructure;
 using PantryServer.Models.Interfaces;
+using PantryServer.Models.Pages;
 
 namespace PantryServer.Models
 {
@@ -13,5 +14,8 @@ namespace PantryServer.Models
         public string Location { get; set; }
         public string Description { get; set; }
         public string Email { get; set; }
+        public AboutPage AboutPage { get; set; }
+        public ContactPage ContactPage { get; set; }
+
     }
 }

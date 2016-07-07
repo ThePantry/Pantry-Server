@@ -6,6 +6,7 @@ namespace PantryServer.Models.Interfaces
     {
         int Id { get; set; }
         string Name { get; set; }
+        string Heading { get; set; }
         List<Product> Products { get; set; }
     }
 }

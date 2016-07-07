@@ -20,7 +20,12 @@ namespace PantryServer.Controllers
     [RoutePrefix("api/shops")]
     public class ShopsController : BaseApiController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db;
+
+        public ShopsController(ApplicationDbContext context)
+        {
+            db = context;
+        }        
 
         [AllowAnonymous]
         [Route("")]
