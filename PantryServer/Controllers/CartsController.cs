@@ -28,7 +28,7 @@ namespace PantryServer.Controllers
         //TODO Get the caert of a specific user - look at other controllers for how to get current user
         // GET: api/Carts/5 
         [ResponseType(typeof(Cart))]
-        public async Task<IHttpActionResult> GetCart(int id)
+        public async Task<IHttpActionResult> GetUsersCurrentCart()
         {
             // get newest cart for a given user id User.Identity.GetUserId(). suggestion sort by ascending/decending and take first
             // single returns the first record it finds. checkout firstasync. groupby ascending
@@ -43,7 +43,7 @@ namespace PantryServer.Controllers
             {
                 
             }
-            Cart cart = await db.Carts.FindAsync(id);
+            Cart cart = await db.Carts.FindAsync();
             if (cart == null)
             {
                 return NotFound();
