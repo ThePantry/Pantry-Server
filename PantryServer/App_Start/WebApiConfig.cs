@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace PantryServer
 {
@@ -16,6 +17,12 @@ namespace PantryServer
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+#if DEBUG
+            var corsAttr = new EnableCorsAttribute("http://example.com", "*", "*");
+            config.EnableCors(corsAttr);
+#endif
+
         }
     }
 }
