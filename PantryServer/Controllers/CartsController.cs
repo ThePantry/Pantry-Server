@@ -15,7 +15,7 @@ using PantryServer.Models;
 
 namespace PantryServer.Controllers
 {
-    public class CartsController : ApiController
+    public class CartsController : BaseApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 

@@ -12,11 +12,10 @@ using System;
 
 namespace PantryServerUnitTests.Controllers
 {
-    [TestFixture()]
+    [TestFixture]
     public class ShopsControllerTests
     {
-        ApplicationDbContext testDb = new ApplicationDbContext();
-
+        
         public DbSet<Shop> createMoqShop()
         {
             var data = new List<Shop>
@@ -36,24 +35,6 @@ namespace PantryServerUnitTests.Controllers
             return mockSet.Object;
         }
 
-
-        [Test]
-        public void GetShops_NoShops_Null()
-        {
-            //Given
-            //I have a controller which takes a db context
-            ShopsController controller = new ShopsController(testDb);
-
-
-            //When
-            //The getshops method on that controller is called
-            IQueryable<Shop> shops = controller.GetShops();
-
-            //Then
-            //The method will return null
-            Assert.IsEmpty(shops);
-        }
-
         [Test]
         public void GetShops_Shops_NotNull()
         {
@@ -61,8 +42,7 @@ namespace PantryServerUnitTests.Controllers
             Mock<ApplicationDbContext> applicationDB = new Mock<ApplicationDbContext>();
             applicationDB.Setup(t => t.Shops).Returns(createMoqShop);
             ShopsController controller = new ShopsController(applicationDB.Object);
-
-
+            
             //When
             IQueryable<Shop> shops = controller.GetShops();
 
@@ -75,6 +55,7 @@ namespace PantryServerUnitTests.Controllers
         public void PutShop_givenValidData_savesChanges()
         {
             //Given
+            ApplicationDbContext testDb = new ApplicationDbContext();
             ShopsController controller = new ShopsController(testDb);
 
             //When
